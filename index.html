@@ -113,6 +113,7 @@ p.sub{margin:0 0 18px;color:var(--muted);font-size:clamp(14px,2.2vw,17px);line-h
 .start .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px}
 .hero{width:150px;background:rgba(255,255,255,.05);border:2px solid var(--line);border-radius:20px;padding:16px 8px}
 .hero .e{font-size:52px;line-height:1.1}
+.hero .ji{width:58px;height:58px;margin:0 auto}
 .hero .n{font-family:var(--en);font-size:15px;color:var(--cyan);margin-top:6px}
 .hero .z{font-size:13px;color:var(--muted);margin-top:2px}
 
@@ -167,6 +168,7 @@ button:focus-visible,.pip:focus-visible,.tap:focus-visible,select:focus-visible,
   cursor:pointer;text-align:center;color:inherit;font:inherit;display:flex;flex-direction:column;gap:3px;align-items:center}
 .tap:hover{border-color:var(--gold);background:rgba(255,197,61,.09);transform:translateY(-3px)}
 .tap .e{font-size:40px;line-height:1.1}
+.tap .ji{width:56px;height:56px;margin:0 auto}
 .tap .en{font-family:var(--en);font-weight:700;font-size:16px;color:var(--power);line-height:1.25}
 .tap .zh{font-size:13px;color:var(--muted)}
 .tap.done{border-color:var(--ok)}
@@ -174,7 +176,8 @@ button:focus-visible,.pip:focus-visible,.tap:focus-visible,select:focus-visible,
 
 /* ===== job detail ===== */
 .jobtop{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
-.medal{font-size:clamp(52px,11vw,88px);line-height:1;filter:drop-shadow(0 0 22px rgba(255,197,61,.55))}
+.medal{width:clamp(58px,12vw,94px);height:clamp(58px,12vw,94px);flex:0 0 auto;filter:drop-shadow(0 0 22px rgba(255,197,61,.45))}
+.medal .ji{width:100%;height:100%}
 .jobname{font-family:var(--en);font-weight:700;font-size:clamp(26px,6vw,52px);color:var(--power);line-height:1.1}
 .jobname .z{display:block;font-family:var(--zh);font-size:16px;font-weight:400;color:var(--muted);margin-top:4px}
 
@@ -279,6 +282,7 @@ table.iu td.ghost{color:#9FB1BC}
 .chip:hover{border-color:var(--cyan)}
 .chip.on{background:var(--gold);color:#2A1B00;border-color:var(--gold)}
 .chip.on .z{color:#6A4A00}
+.chip .ji{width:24px;height:24px;display:inline-block;vertical-align:-7px;margin-right:6px}
 
 /* ===== games ===== */
 .quiz{text-align:center}
@@ -294,23 +298,37 @@ table.iu td.ghost{color:#9FB1BC}
 .opt{font-family:var(--en);font-weight:700;font-size:clamp(17px,3.4vw,24px);cursor:pointer;
   background:var(--panel-2);border:3px solid var(--line);border-radius:16px;padding:14px 26px;color:#DFF7FB}
 .opt:hover{border-color:var(--gold)}
+.opt .ji{width:30px;height:30px;display:inline-block;vertical-align:-8px;margin-right:8px}
 .opt.right{background:var(--ok);color:#06240F;border-color:var(--ok);animation:born .4s}
 .opt.wrong{background:var(--no);color:#3A0808;border-color:var(--no);animation:shake .4s}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}
 .verdict{min-height:34px;font-size:19px;font-weight:700;margin-top:14px}
 
+/* ===== 職業插圖 ===== */
+.ji{display:block;pointer-events:none}
+
 /* ===== ID card ===== */
-.idwrap{display:grid;grid-template-columns:1fr 1.5fr;gap:16px;align-items:center}
-@media(max-width:720px){.idwrap{grid-template-columns:1fr}}
-.photo{background:var(--paper);border-radius:14px;aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;
-  font-size:clamp(64px,16vw,120px);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.idwrap{display:block}
 .idboard{background:var(--paper);border-radius:16px;padding:20px 16px;color:var(--ink)}
 .idboard .ttl{font-family:var(--hud);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#6E8898;margin-bottom:10px}
 .idsent{font-family:var(--en);font-weight:700;font-size:clamp(26px,5.4vw,50px);color:var(--ink);
   display:flex;flex-wrap:wrap;gap:10px .28em;align-items:flex-start}
 .idsent .wstack .wz{font-size:max(22px,.5em);color:#2C4A63;font-weight:500}
-.idwrap{grid-template-columns:minmax(150px,.8fr) 2.2fr}
 .idboard{padding:24px 18px}
+
+/* 老師問的那一句 */
+.idq{display:grid;grid-template-columns:auto 1fr;gap:0 12px;align-items:center;cursor:pointer;
+  background:#EFF5F9;border-left:6px solid var(--cursor);border-radius:14px;padding:12px 16px;margin-bottom:16px}
+.idq:hover{background:#E2EEF6}
+.idq .qs{grid-row:1/3;font-size:26px;line-height:1}
+.idq .qe{font-family:var(--en);font-weight:700;font-size:clamp(19px,3.6vw,32px);color:#24507F;line-height:1.25}
+.idq .qz{font-family:var(--zh);font-size:clamp(15px,2.4vw,20px);color:#3A5468;margin-top:3px}
+/* 答句 ＋ 職業插圖 */
+.idans{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.idans .idsent{flex:1 1 240px;min-width:0}
+.idfig{flex:0 0 auto;width:clamp(74px,17vw,128px);height:clamp(74px,17vw,128px);
+  background:#F3F7F9;border:2px solid #D3DDE4;border-radius:18px;padding:6px}
+.idfig .ji{width:100%;height:100%}
 select,input[type=text]{font-family:var(--zh);font-size:16px;padding:10px 12px;border-radius:12px;
   border:2px solid var(--line);background:var(--panel-2);color:#E8F3FA;max-width:100%}
 select option{background:var(--deep);color:#E8F3FA}
@@ -359,9 +377,9 @@ select option{background:var(--deep);color:#E8F3FA}
         <div class="big">My Awesome Future!</div>
         <div class="zh">2035 年的我，超酷的！</div>
         <div class="row">
-          <div class="hero"><div class="e">🧑‍⚕️</div><div class="n">DR. CHEN</div><div class="z">超級醫生</div></div>
-          <div class="hero"><div class="e">🎮</div><div class="n">GAMER KAI</div><div class="z">電競選手</div></div>
-          <div class="hero"><div class="e">🎤</div><div class="n">POP STAR LUNA</div><div class="z">流行歌手</div></div>
+          <div class="hero"><div class="e" data-fig="doctor"></div><div class="n">DR. CHEN</div><div class="z">超級醫生</div></div>
+          <div class="hero"><div class="e" data-fig="esports player"></div><div class="n">GAMER KAI</div><div class="z">電競選手</div></div>
+          <div class="hero"><div class="e" data-fig="singer"></div><div class="n">POP STAR LUNA</div><div class="z">流行歌手</div></div>
         </div>
         <p class="sub">十個職業英文單字、一個句型、一個一輩子都忘不掉的魔法規則。<br>點畫面上任何一個英文字，它就會念給你聽。</p>
         <button class="btn" data-go="manual">▶ 按我開始</button>
@@ -434,8 +452,8 @@ select option{background:var(--deep);color:#E8F3FA}
         <p class="sub">這三個圖案加起來，是哪一個職業？</p>
         <div class="code"><span class="g">🎧</span><span class="op">+</span><span class="g">💻</span><span class="op">+</span><span class="g">💰</span><span class="op">=</span><span class="g">❓</span></div>
         <div class="opts">
-          <button class="opt" data-q="1" data-a="0">doctor</button>
-          <button class="opt" data-q="1" data-a="1">esports player</button>
+          <button class="opt" data-q="1" data-a="0"><span data-fig="doctor"></span>doctor</button>
+          <button class="opt" data-q="1" data-a="1"><span data-fig="esports player"></span>esports player</button>
         </div>
         <div class="verdict" id="v1"></div>
         <div class="navrow"><button class="btn ghost" data-go="factory">◀ 上一關</button><button class="btn" data-go="game2">下一關：水晶球 ▶</button></div>
@@ -449,8 +467,8 @@ select option{background:var(--deep);color:#E8F3FA}
         <h2 class="t">魔法水晶球的讀心術</h2>
         <div class="orb"><p>我每天都會拍<br>超好笑的影片，<br>還有很多粉絲幫我按讚！<br>請問我是…？</p></div>
         <div class="opts">
-          <button class="opt" data-q="2" data-a="0">🥐 baker</button>
-          <button class="opt" data-q="2" data-a="1">💖 influencer</button>
+          <button class="opt" data-q="2" data-a="0"><span data-fig="baker"></span>baker</button>
+          <button class="opt" data-q="2" data-a="1"><span data-fig="influencer"></span>influencer</button>
         </div>
         <div class="verdict" id="v2"></div>
         <div class="navrow"><button class="btn ghost" data-go="game1">◀ 上一關</button><button class="btn" data-go="idcard">最後一關：我的未來卡 ▶</button></div>
@@ -462,18 +480,23 @@ select option{background:var(--deep);color:#E8F3FA}
       <div class="card">
         <div class="eyebrow">Future ID</div>
         <h2 class="t">現在，換你設計未來！</h2>
-        <p class="sub">選一個你最想成為的職業，做出你自己的未來 ID 卡。</p>
+        <p class="sub">老師問：<b style="color:var(--gold)">What do you want to be?</b><br>選一個你最想成為的職業，用英文回答他。</p>
         <div class="idwrap">
-          <div class="photo" id="idPhoto">❓</div>
-          <div>
-            <div class="idboard">
-              <div class="ttl">Future ID · 未來 ID 卡</div>
+          <div class="idboard">
+            <div class="ttl">Future ID · 未來 ID 卡</div>
+            <div class="idq" data-say="What do you want to be?">
+              <span class="qs">🔊</span>
+              <span class="qe">What do you want to be?</span>
+              <span class="qz">你想要成為什麼？</span>
+            </div>
+            <div class="idans">
               <div class="idsent" id="idSent"></div>
+              <div class="idfig" id="idFig"></div>
             </div>
-            <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
-              <select id="idPick"><option value="">— 選擇你的超能力 —</option></select>
-              <button class="btn" id="sayId">🔊 念給我聽</button>
-            </div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap">
+            <select id="idPick"><option value="">— 選擇你的超能力 —</option></select>
+            <button class="btn" id="sayId">🔊 念答句給我聽</button>
           </div>
         </div>
         <div class="navrow"><button class="btn ghost" data-go="game2">◀ 上一關</button><button class="btn" data-go="roster">再看一次圖鑑 ▶</button></div>
@@ -522,6 +545,130 @@ var JOBS=[
   ht:'-ian 也是「人」',
   hk:'來自拉丁文 <b>veterinae</b>「家畜」，字尾 <b>-ian</b> 同樣是「人」。太長記不住？美國人平常只說 <b>vet</b>！'}
 ];
+
+/* ---------------- 職業插圖：十張同一套線條與配色的手繪 SVG ---------------- */
+function faceOf(m){
+  return '<circle cx="27.9" cy="25.6" r="1.5" fill="#25303A"/><circle cx="36.1" cy="25.6" r="1.5" fill="#25303A"/>'+
+         '<path d="M29.3 30.6q2.7 2.1 5.4 0" fill="none" stroke="'+m+'" stroke-width="1.5" stroke-linecap="round"/>';
+}
+function figure(o){
+  return '<circle cx="32" cy="32" r="30" fill="#16324A"/>'+
+         (o.back||'')+
+         '<rect x="27.4" y="30" width="9.2" height="14" rx="4.6" fill="'+o.shade+'"/>'+
+         '<path d="M11.6 54C13 45 22 41 32 41c10 0 19 4 20.4 13a30 30 0 0 1-40.8 0z" fill="'+o.shirt+'"/>'+
+         (o.torso||'')+
+         '<circle cx="32" cy="24" r="12" fill="'+o.hair+'"/>'+
+         '<circle cx="32" cy="26" r="10.5" fill="'+o.skin+'"/>'+
+         (o.face||faceOf(o.shade))+
+         (o.hat||'')+
+         (o.front||'')+
+         '<circle cx="32" cy="32" r="29" fill="none" stroke="#2B546F" stroke-width="2"/>';
+}
+var ART={};
+function mk(k,o){ ART[k]=figure(o); }
+
+/* 1 運動員：金色髮帶 ＋ 胸前獎牌 */
+mk('athlete',{skin:'#E8B588',shade:'#CD9467',hair:'#2E2016',shirt:'#FF6155',
+  hat:'<rect x="21.2" y="19.2" width="21.6" height="4.8" rx="2.4" fill="#FFC53D"/>',
+  front:'<path d="M27.4 43L32 50.4L36.6 43" fill="none" stroke="#5BE1F0" stroke-width="2.8" stroke-linejoin="round"/>'+
+        '<circle cx="32" cy="53.6" r="5.6" fill="#FFC53D" stroke="#B3781A" stroke-width="1.6"/>'+
+        '<path d="M32 50.4L33 52.5L35.3 52.8L33.6 54.4L34 56.7L32 55.6L30 56.7L30.4 54.4L28.7 52.8L31 52.5Z" fill="#8A5C0B"/>'});
+
+/* 2 電競選手：電競耳麥 ＋ 麥克風 */
+mk('esports player',{skin:'#F2C89B',shade:'#D7A876',hair:'#3C2A1E',shirt:'#5BE1F0',
+  front:'<path d="M19.4 25.6a12.6 12.6 0 0 1 25.2 0" fill="none" stroke="#1B2733" stroke-width="3.2" stroke-linecap="round"/>'+
+        '<rect x="16.2" y="23.4" width="6.6" height="10.4" rx="3.3" fill="#FF6155"/>'+
+        '<rect x="41.2" y="23.4" width="6.6" height="10.4" rx="3.3" fill="#FF6155"/>'+
+        '<path d="M19.6 33.4c-1.4 5 1.8 7.8 5.8 7.6" fill="none" stroke="#1B2733" stroke-width="2.2" stroke-linecap="round"/>'+
+        '<circle cx="26" cy="40.8" r="2.1" fill="#1B2733"/>'});
+
+/* 3 網紅：包包頭 ＋ 手機自拍 ＋ 愛心 */
+mk('influencer',{skin:'#C98A5E',shade:'#AC7049',hair:'#1E1A18',shirt:'#FF9EC4',
+  hat:'<circle cx="32" cy="11.2" r="5.8" fill="#1E1A18"/>',
+  front:'<rect x="38.6" y="37.6" width="11" height="16.4" rx="2.4" fill="#1B2733"/>'+
+        '<rect x="40.1" y="39.5" width="8" height="12" rx="1.2" fill="#5BE1F0"/>'+
+        '<rect x="36.6" y="47" width="7.4" height="7" rx="3.5" fill="#C98A5E"/>'+
+        '<path d="M17.4 41.6c0-2.5 3.4-3.3 4.6-1 1.2-2.3 4.6-1.5 4.6 1 0 2.8-4.6 5.6-4.6 5.6s-4.6-2.8-4.6-5.6z" fill="#FF6155"/>'});
+
+/* 4 醫生：白袍 ＋ 聽診器 */
+mk('doctor',{skin:'#F2C89B',shade:'#D7A876',hair:'#4A3222',shirt:'#FFFFFF',
+  torso:'<path d="M32 41.2L24.4 58.4M32 41.2L39.6 58.4" fill="none" stroke="#CBD9E3" stroke-width="1.8"/>',
+  front:'<path d="M26.2 42.4c-1.2 6.6.6 10.6 4.6 12.2M37.8 42.4c1.2 6.6-.6 10.6-4.6 12.2" fill="none" stroke="#2F6FDE" stroke-width="2.4" stroke-linecap="round"/>'+
+        '<circle cx="32" cy="55.6" r="3.6" fill="#5BE1F0" stroke="#2F6FDE" stroke-width="1.6"/>'});
+
+/* 5 麵包糕點師：廚師帽 ＋ 剛做好的杯子蛋糕 */
+mk('baker',{skin:'#E0A87A',shade:'#C48E62',hair:'#2E2016',shirt:'#F6E7CF',
+  hat:'<circle cx="23.8" cy="12.4" r="5.8" fill="#FBF6EC"/><circle cx="40.2" cy="12.4" r="5.8" fill="#FBF6EC"/>'+
+      '<circle cx="32" cy="10" r="6.8" fill="#FBF6EC"/>'+
+      '<rect x="20.8" y="15.4" width="22.4" height="6.8" rx="2.8" fill="#FBF6EC"/>'+
+      '<path d="M21.4 19.2H42.6" fill="none" stroke="#DED5C4" stroke-width="1.2"/>',
+  front:'<path d="M25.6 58.2L27.4 49.6H36.6L38.4 58.2Z" fill="#E0B887"/>'+
+        '<path d="M26.8 49.6c-1.6-4.2 2-7 5.2-5.4 3.2-1.6 6.8 1.2 5.2 5.4z" fill="#FF9EC4"/>'+
+        '<circle cx="32" cy="43.2" r="1.9" fill="#FF6155"/>'});
+
+/* 6 程式設計師：眼鏡 ＋ 胸前的 </> */
+mk('programmer',{skin:'#A9714A',shade:'#8E5D3B',hair:'#1E1A18',shirt:'#5BD98A',
+  face:faceOf('#8E5D3B')+
+       '<circle cx="27.6" cy="25.6" r="4" fill="none" stroke="#141C24" stroke-width="1.7"/>'+
+       '<circle cx="36.4" cy="25.6" r="4" fill="none" stroke="#141C24" stroke-width="1.7"/>'+
+       '<path d="M31.6 25.6h.8M21.8 25.2l1.8-.3M42.2 25.2l-1.8-.3" stroke="#141C24" stroke-width="1.7" stroke-linecap="round"/>',
+  front:'<path d="M28.2 47.6L23.8 52.2L28.2 56.8M35.8 47.6L40.2 52.2L35.8 56.8M34.6 45.8L29.4 58.6" fill="none" stroke="#0E2131" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'});
+
+/* 7 歌手：長髮 ＋ 手持麥克風 ＋ 音符 */
+mk('singer',{skin:'#F2C89B',shade:'#D7A876',hair:'#5A3A22',shirt:'#C79BF2',
+  back:'<rect x="19.2" y="22" width="5.6" height="22" rx="2.8" fill="#5A3A22"/>'+
+       '<rect x="39.2" y="22" width="5.6" height="22" rx="2.8" fill="#5A3A22"/>',
+  front:'<g transform="rotate(20 41 42)">'+
+          '<rect x="37.6" y="30.6" width="7" height="11.4" rx="3.5" fill="#9FB4C4"/>'+
+          '<rect x="39.6" y="41" width="3" height="10" rx="1.5" fill="#5B7288"/>'+
+          '<rect x="37" y="44.4" width="8.2" height="6.8" rx="3.4" fill="#F2C89B"/>'+
+        '</g>'+
+        '<circle cx="19.4" cy="45.4" r="2.8" fill="#FFC53D"/>'+
+        '<path d="M22.2 45.4V34.8l5.4 1.8" fill="none" stroke="#FFC53D" stroke-width="1.9" stroke-linecap="round"/>'});
+
+/* 8 遊戲設計師：耳上鉛筆 ＋ 正在設計的像素愛心 */
+mk('designer',{skin:'#E8B588',shade:'#CD9467',hair:'#2E2016',shirt:'#FFC53D',
+  hat:'<path d="M42.4 22.2L49.6 19.4L50.7 22.2L43.5 25Z" fill="#FF6155"/>'+
+      '<path d="M42.4 22.2L43.5 25L40 24.4Z" fill="#F6E7CF"/>',
+  front:'<rect x="21.2" y="43.4" width="19.6" height="14.6" rx="2.4" fill="#12283C" stroke="#2B546F" stroke-width="1.6"/>'+
+        '<rect x="27.7" y="45.6" width="2.2" height="2.2" fill="#FF6155"/>'+
+        '<rect x="32.1" y="45.6" width="2.2" height="2.2" fill="#FF6155"/>'+
+        '<rect x="25.5" y="47.8" width="11" height="4.4" fill="#FF6155"/>'+
+        '<rect x="27.7" y="52.2" width="6.6" height="2.2" fill="#FF6155"/>'+
+        '<rect x="29.9" y="54.4" width="2.2" height="2.2" fill="#FF6155"/>'});
+
+/* 9 警察：警帽金星 ＋ 胸前警徽 */
+mk('police officer',{skin:'#C98A5E',shade:'#AC7049',hair:'#1E1A18',shirt:'#2F6FDE',
+  hat:'<path d="M21.2 19.4c0-7.6 5-11.6 10.8-11.6s10.8 4 10.8 11.6z" fill="#2F6FDE"/>'+
+      '<path d="M32 10.2L33.6 13.4L37.2 13.9L34.6 16.4L35.2 20L32 18.3L28.8 20L29.4 16.4L26.8 13.9L30.4 13.4Z" fill="#FFC53D"/>'+
+      '<rect x="18.4" y="18.6" width="27.2" height="5.2" rx="2.6" fill="#14284A"/>',
+  front:'<path d="M24 45.4L28.8 46.9V50.7C28.8 53.5 26.7 55.2 24 56.2C21.3 55.2 19.2 53.5 19.2 50.7V46.9Z" fill="#FFC53D" stroke="#B3781A" stroke-width="1.1"/>'});
+
+/* 10 獸醫：聽診器 ＋ 懷裡的小狗 */
+mk('veterinarian',{skin:'#F2C89B',shade:'#D7A876',hair:'#4A3222',shirt:'#7FD8C9',
+  front:'<path d="M25.4 42.6c-.8 5.6.6 9.2 3.2 11.2" fill="none" stroke="#2F6FDE" stroke-width="2.2" stroke-linecap="round"/>'+
+        '<circle cx="29.4" cy="55" r="3" fill="#5BE1F0" stroke="#2F6FDE" stroke-width="1.4"/>'+
+        '<path d="M27.6 50.6c2.8 4.4 7.6 6.8 12.4 6.8" fill="none" stroke="#7FD8C9" stroke-width="5.4" stroke-linecap="round"/>'+
+        '<path d="M35.2 45.8c-2.6-3.8-1.6-6.6 1.4-5.8 1.7.5 3 2.1 3.6 3.8z" fill="#C99A6B"/>'+
+        '<path d="M45.8 45.8c2.6-3.8 1.6-6.6-1.4-5.8-1.7.5-3 2.1-3.6 3.8z" fill="#C99A6B"/>'+
+        '<circle cx="40.5" cy="49.8" r="7.2" fill="#E8C79B"/>'+
+        '<ellipse cx="40.5" cy="52.6" rx="4.2" ry="3.1" fill="#F8EEDD"/>'+
+        '<circle cx="37.4" cy="48" r="1.4" fill="#2E2016"/><circle cx="43.6" cy="48" r="1.4" fill="#2E2016"/>'+
+        '<circle cx="40.5" cy="50.6" r="1.6" fill="#2E2016"/>'});
+
+/* 還沒選職業時的問號牌 */
+ART._q='<circle cx="32" cy="32" r="30" fill="#16324A"/>'+
+  '<path d="M25.6 25.4c0-4.2 3-7 6.8-7 3.8 0 6.6 2.6 6.6 6 0 4.6-5.6 4.8-5.6 9v1.4" fill="none" stroke="#5BE1F0" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>'+
+  '<circle cx="33.4" cy="43.4" r="2.8" fill="#5BE1F0"/>'+
+  '<circle cx="32" cy="32" r="29" fill="none" stroke="#2B546F" stroke-width="2"/>';
+
+function figOf(k){
+  return '<svg class="ji" viewBox="0 0 64 64" aria-hidden="true">'+(ART[k]||ART._q)+'</svg>';
+}
+/* 開場英雄卡、遊戲選項裡的插圖 */
+Array.prototype.forEach.call(document.querySelectorAll('[data-fig]'),function(el){
+  el.innerHTML=figOf(el.getAttribute('data-fig'));
+});
 
 var FUSE=[
  {a:'bake',az:'烤 🍞',b:'er',bz:'的人',r:'baker',rz:'麵包糕點師'},
@@ -774,7 +921,7 @@ var jobCard=document.getElementById('jobCard');
 JOBS.forEach(function(j,i){
   var b=document.createElement('button');
   b.className='tap'; b.dataset.i=i;
-  b.innerHTML='<span class="e">'+j.emoji+'</span><span class="en">'+j.k+'</span><span class="zh">'+j.zh+'</span>';
+  b.innerHTML='<span class="e">'+figOf(j.k)+'</span><span class="en">'+j.k+'</span><span class="zh">'+j.zh+'</span>';
   b.addEventListener('click',function(){openJob(i)});
   grid.appendChild(b);
 });
@@ -831,7 +978,7 @@ function openJob(i){
 
   jobCard.innerHTML=
     '<div class="eyebrow">Job '+(i+1)+' / '+JOBS.length+'</div>'+
-    '<div class="jobtop"><div class="medal">'+j.emoji+'</div>'+
+    '<div class="jobtop"><div class="medal">'+figOf(j.k)+'</div>'+
       '<div class="jobname" data-say="'+esc(j.k)+'">'+esc(j.k)+'<span class="z">'+j.zh+'</span></div></div>'+
     '<div class="readrow">'+
     '<button class="side" id="sidePrev" title="上一句"><span class="ar">◀</span><span class="tx">上一句</span></button>'+
@@ -910,7 +1057,7 @@ JOBS.forEach(function(j){
   adjChips.appendChild(a);
 
   var b=document.createElement('button');
-  b.className='chip'; b.innerHTML=j.emoji+' '+j.k+'<span class="z">'+j.zh+'</span>';
+  b.className='chip'; b.innerHTML=figOf(j.k)+j.k+'<span class="z">'+j.zh+'</span>';
   b.addEventListener('click',function(){
     pickJob=j; facIdx=JOBS.indexOf(j); say(j.k);
     Array.prototype.forEach.call(jobChips.children,function(c){c.classList.remove('on')});
@@ -998,7 +1145,7 @@ function drawId(){
   var i=pick.value;
   var j = i==='' ? null : JOBS[i];
   idTokens = j ? ['I','want','to','be',artOf(j),j.k] : null;
-  document.getElementById('idPhoto').textContent = j ? j.emoji : '❓';
+  document.getElementById('idFig').innerHTML = figOf(j ? j.k : '_q');
   landSoon(idSent,1150);
   idSent.innerHTML=stackRow([
     ['I','我'],
