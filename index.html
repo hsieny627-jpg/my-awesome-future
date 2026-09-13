@@ -363,7 +363,7 @@ select option{background:var(--deep);color:#E8F3FA}
           <div class="hero"><div class="e">🎮</div><div class="n">GAMER KAI</div><div class="z">電競選手</div></div>
           <div class="hero"><div class="e">🎤</div><div class="n">POP STAR LUNA</div><div class="z">流行歌手</div></div>
         </div>
-        <p class="sub">十個職業英文單字、兩個句型、一個一輩子都忘不掉的魔法規則。<br>點畫面上任何一個英文字，它就會念給你聽。</p>
+        <p class="sub">十個職業英文單字、一個句型、一個一輩子都忘不掉的魔法規則。<br>點畫面上任何一個英文字，它就會念給你聽。</p>
         <button class="btn" data-go="manual">▶ 按我開始</button>
       </div>
     </section>
@@ -377,7 +377,7 @@ select option{background:var(--deep);color:#E8F3FA}
         <div class="rules">
           <div class="rule"><div class="ic">🎯</div><div class="tx">看到 <span class="redword">紅色</span> 的英文字，那就是你未來的 <b>「超能力」</b>——你的職業。</div></div>
           <div class="rule"><div class="ic">👻</div><div class="tx">英文裡的 <span class="ghostword">to</span> 是 <b>隱形小精靈</b>。它沒有中文意思，我們<b>不翻譯它，直接跳過</b>。</div></div>
-          <div class="rule"><div class="ic">🔊</div><div class="tx">每一個英文字都可以<b>點</b>。點下去，它就會慢慢念一次給你聽。<br><span style="font-size:14px;color:var(--muted)">試試看 → </span> <button class="chip" data-say="I am a happy baker.">I am a happy baker.</button></div></div>
+          <div class="rule"><div class="ic">🔊</div><div class="tx">每一個英文字都可以<b>點</b>。點下去，它就會慢慢念一次給你聽。<br><span style="font-size:14px;color:var(--muted)">試試看 → </span> <button class="chip" data-say="I want to be a happy baker.">I want to be a happy baker.</button></div></div>
         </div>
         <div class="navrow"><button class="btn ghost" data-go="start">◀ 回開場</button><button class="btn" data-go="magic">下一關：-er 魔法 ▶</button></div>
       </div>
@@ -414,8 +414,8 @@ select option{background:var(--deep);color:#E8F3FA}
         <div class="eyebrow">Sentence Factory</div>
         <h2 class="t">句型工廠</h2>
         <p class="sub">選一個<b style="color:var(--gold)">形容詞</b>，再選一個<b style="color:var(--power)">職業</b>，句子就造好了。<br>亂配也沒關係——越好笑越記得住。</p>
-        <div class="sub-card"><h3>① 我是怎樣的？（形容詞）</h3><div class="chips" id="adjChips"></div></div>
-        <div class="sub-card" style="margin-top:12px"><h3>② 我是什麼？（職業）</h3><div class="chips" id="jobChips"></div></div>
+        <div class="sub-card"><h3>① 我想要成為怎樣的？（形容詞）</h3><div class="chips" id="adjChips"></div></div>
+        <div class="sub-card" style="margin-top:12px"><h3>② 我想要成為什麼？（職業）</h3><div class="chips" id="jobChips"></div></div>
         <div class="readrow" style="margin-top:14px">
           <button class="side" id="facPrev" title="上一句"><span class="ar">◀</span><span class="tx">上一句</span></button>
           <div class="board"><div class="sent" id="factoryOut"></div></div>
@@ -491,36 +491,36 @@ select option{background:var(--deep);color:#E8F3FA}
 
 /* ---------------- data ---------------- */
 var JOBS=[
+ {k:'athlete',col:['vcc','cvcs'],art:'an',emoji:'🏃',pat:'want',adj:'professional',zhAdj:'職業',zh:'運動員',syl:['ath','lete'],
+  ht:'⚠ 例外：沒有 -er',
+  hk:'<b>athlete</b> 來自希臘文 <b>athlētēs</b>，這個字本身就是「參加比賽的人」，所以<b>不用再加 er</b>。<br><b>professional</b> 是「職業的、專業的」，靠這件事吃飯的人才叫 professional。'},
+ {k:'esports player',col:['v','ccvccc','ccvv','vc'],art:'an',emoji:'🎮',pat:'want',adj:'pro',zhAdj:'職業的',zh:'電競選手',syl:['e','sports','play','er'],
+  ht:'play ＋ er',
+  hk:'<b>e</b> ＝ electronic 電子的，<b>sports</b> ＝ 運動，合起來就是「電子運動」。<b>play</b> 玩 ＋ <b>er</b> 人 ＝ 玩的人。<br><b>pro</b> 是 <b>professional</b>（職業的）的簡稱，打電競、打球的職業選手都這樣說。'},
+ {k:'influencer',col:['vc','ccv','vcc','vc'],art:'an',emoji:'📣',pat:'want',adj:'famous',zhAdj:'有名的',zh:'網紅',syl:['in','flu','enc','er'],
+  ht:'influence ＋ er',
+  hk:'<b>influence</b> 是「影響」，來自拉丁文 <b>influere</b>「流進去」。讓想法流進大家心裡的人，就是 influencer。'},
  {k:'doctor',col:['cvc','cvc'],emoji:'🧑‍⚕️',pat:'want',adj:'great',zhAdj:'很棒的',zh:'醫生',syl:['doc','tor'],
   ht:'-or 也是「人」',
   hk:'doctor 來自拉丁文 <b>docēre</b>「教導」。最早指「有學問、能教人的人」，後來才變成醫生。字尾的 <b>-or</b> 和 -er 一樣，都是「人」。'},
- {k:'esports player',col:['v','ccvccc','ccvv','vc'],art:'an',emoji:'🎮',adj:'pro',zhAdj:'職業的',zh:'電競選手',syl:['e','sports','play','er'],
-  ht:'play ＋ er',
-  hk:'<b>e</b> ＝ electronic 電子的，<b>sports</b> ＝ 運動，合起來就是「電子運動」。<b>play</b> 玩 ＋ <b>er</b> 人 ＝ 玩的人。<br><b>pro</b> 是 <b>professional</b>（職業的）的簡稱，打電競、打球的職業選手都這樣說。'},
- {k:'influencer',col:['vc','ccv','vcc','vc'],art:'an',emoji:'📣',adj:'famous',zhAdj:'有名的',zh:'網紅',syl:['in','flu','enc','er'],
-  ht:'influence ＋ er',
-  hk:'<b>influence</b> 是「影響」，來自拉丁文 <b>influere</b>「流進去」。讓想法流進大家心裡的人，就是 influencer。'},
- {k:'programmer',col:['ccv','ccvc','cvc'],emoji:'💻',adj:'smart',zhAdj:'聰明的',zh:'程式設計師',syl:['pro','gram','mer'],
-  ht:'program ＋ m ＋ er',
-  hk:'<b>program</b> 是「程式」。加 er 之前要<b>多寫一個 m</b>，變成 programmer——這是最容易拼錯的地方，小心！'},
- {k:'baker',col:['cvc','vc'],emoji:'🍞',adj:'happy',zhAdj:'快樂的',zh:'麵包糕點師',syl:['bak','er'],
+ {k:'baker',col:['cvc','vc'],emoji:'🍞',pat:'want',adj:'happy',zhAdj:'快樂的',zh:'麵包糕點師',syl:['bak','er'],
   ht:'bake ＋ er',
   hk:'<b>bake</b> 是「烤」。烤東西的人 ＝ baker。注意：bake 後面的 <b>e 被 er 吃掉了</b>，不是 bakeer。'},
- {k:'police officer',col:['cv','cvcs','vc','cv','cvc'],emoji:'👮',adj:'brave',zhAdj:'勇敢的',zh:'警察',syl:['po','lice','of','fi','cer'],
-  ht:'office ＋ er',
-  hk:'<b>police</b> 來自希臘文 <b>polis</b>「城市」——守護城市的人。<b>office</b> 是「職務」，加 er 就是「有職務的人」officer。'},
- {k:'veterinarian',col:['cvc','vc','v','cvc','v','vc'],emoji:'🐶',adj:'kind',zhAdj:'善良的',zh:'獸醫',syl:['vet','er','i','nar','i','an'],
-  ht:'-ian 也是「人」',
-  hk:'來自拉丁文 <b>veterinae</b>「家畜」，字尾 <b>-ian</b> 同樣是「人」。太長記不住？美國人平常只說 <b>vet</b>！'},
- {k:'singer',col:['cvcc','vc'],emoji:'🎤',adj:'pop',zhAdj:'流行音樂的',zh:'歌手',syl:['sing','er'],
+ {k:'programmer',col:['ccv','ccvc','cvc'],emoji:'💻',pat:'want',adj:'good',zhAdj:'好的',zh:'程式設計師',syl:['pro','gram','mer'],
+  ht:'program ＋ m ＋ er',
+  hk:'<b>program</b> 是「程式」。加 er 之前要<b>多寫一個 m</b>，變成 programmer——這是最容易拼錯的地方，小心！'},
+ {k:'singer',col:['cvcc','vc'],emoji:'🎤',pat:'want',adj:'pop',zhAdj:'流行音樂的',zh:'歌手',syl:['sing','er'],
   ht:'sing ＋ er',
   hk:'<b>sing</b> 是「唱歌」。唱歌的人 ＝ singer。<br>⚠️ 這裡的 <b>pop</b> 是「<b>流行音樂</b>」，<b>不是</b>「受歡迎的」。所以有 pop singer、pop music，但<b>沒有</b> a pop doctor！'},
- {k:'professional athlete',col:['ccv','cvc','cvvc','vc','vcc','cvcs'],emoji:'🏃',pat:'want',noAdj:true,adj:'strong',zhAdj:'強壯的',zh:'職業運動員',syl:['pro','fes','sion','al','ath','lete'],
-  ht:'⚠ 例外：沒有 -er',
-  hk:'<b>athlete</b> 來自希臘文 <b>athlētēs</b>，這個字本身就是「參加比賽的人」，所以<b>不用再加 er</b>。professional 是「職業的、專業的」。'},
- {k:'designer',col:['cv','cvsc','vc'],emoji:'🎨',adj:'top',zhAdj:'頂尖的',zh:'設計師',syl:['de','sign','er'],
+ {k:'designer',col:['cv','cvsc','vc'],emoji:'🎨',pat:'want',adj:'game',zhAdj:'遊戲',zh:'設計師',syl:['de','sign','er'],
   ht:'design ＋ er',
-  hk:'<b>design</b> 是「設計」，設計東西的人 ＝ designer。小陷阱：sign 裡的 <b>g 不發音</b>。'}
+  hk:'<b>design</b> 是「設計」，設計東西的人 ＝ designer。小陷阱：sign 裡的 <b>g 不發音</b>。<br>⚠️ <b>game designer</b> ＝ 設計遊戲的人。這裡的 <b>game</b> 是「<b>遊戲</b>」這個東西，不是在形容人，就像 pop singer 一樣。'},
+ {k:'police officer',col:['cv','cvcs','vc','cv','cvc'],emoji:'👮',pat:'want',adj:'brave',zhAdj:'勇敢的',zh:'警察',syl:['po','lice','of','fi','cer'],
+  ht:'office ＋ er',
+  hk:'<b>police</b> 來自希臘文 <b>polis</b>「城市」——守護城市的人。<b>office</b> 是「職務」，加 er 就是「有職務的人」officer。'},
+ {k:'veterinarian',col:['cvc','vc','v','cvc','v','vc'],emoji:'🐶',pat:'want',adj:'kind',zhAdj:'善良的',zh:'獸醫',syl:['vet','er','i','nar','i','an'],
+  ht:'-ian 也是「人」',
+  hk:'來自拉丁文 <b>veterinae</b>「家畜」，字尾 <b>-ian</b> 同樣是「人」。太長記不住？美國人平常只說 <b>vet</b>！'}
 ];
 
 var FUSE=[
@@ -813,7 +813,7 @@ function openJob(i){
   if(j.pat==='want'){
     var art1 = j.noAdj ? artOf(j) : artBeforeAdj(j.adj);
     words=[['I','我'],['want','想要'],['to','__GHOST__'],['be','成為'],[art1,'一個']];
-    if(!j.noAdj) words.push([j.adj, j.zhAdj.replace('的','')]);
+    if(!j.noAdj) words.push([j.adj, j.zhAdj]);
     words.push([j.k,j.zh]);
   }else{
     words=[['I','我'],['am','是'],[artBeforeAdj(j.adj),'一個'],[j.adj,j.zhAdj],[j.k,j.zh]];
@@ -930,7 +930,7 @@ document.getElementById('facPrev').addEventListener('click',function(){stepFacto
 document.getElementById('facNext').addEventListener('click',function(){stepFactory(1)});
 function factorySentence(){
   if(!pickAdj||!pickJob)return null;
-  return 'I am '+artBeforeAdj(pickAdj.adj)+' '+pickAdj.adj+' '+pickJob.k+'.';
+  return 'I want to be '+artBeforeAdj(pickAdj.adj)+' '+pickAdj.adj+' '+pickJob.k+'.';
 }
 var factoryTokens=null;
 function factoryRead(){
@@ -939,10 +939,12 @@ function factoryRead(){
   sayAlong(factoryTokens, factoryTokens.map(function(_,n){return [st[n]]}), [out]);
 }
 function drawFactory(){
-  factoryTokens = (pickAdj&&pickJob) ? ['I','am',artBeforeAdj(pickAdj.adj),pickAdj.adj,pickJob.k] : null;
+  factoryTokens = (pickAdj&&pickJob) ? ['I','want','to','be',artBeforeAdj(pickAdj.adj),pickAdj.adj,pickJob.k] : null;
   out.innerHTML=stackRow([
     ['I','我'],
-    ['am','是'],
+    ['want','想要'],
+    ['to','','gh'],
+    ['be','成為'],
     [pickAdj?artBeforeAdj(pickAdj.adj):'a','一個'],
     [pickAdj?pickAdj.adj:'＿＿＿＿', pickAdj?pickAdj.zhAdj:'（選形容詞）', pickAdj?'':'blank'],
     [pickJob?pickJob.k:'＿＿＿＿',   pickJob?pickJob.zh:'（選職業）',   pickJob?'pw':'pw blank']
